@@ -1,0 +1,30 @@
+# Залежності пакетів (Node.js)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Збірки та тимчасові файли
+dist/
+build/
+out/
+.cache/
+
+# Системні файли ОС
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Налаштування редакторів коду та IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Логи та змінні середовища
+*.log
+.env
+.env.local
