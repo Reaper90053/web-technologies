@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 5 - Інтерактивна карта України</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        /* Блочний елемент для карти по центру */
+        .map-container {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 15px;
+            background: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .instruction {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .back-link {
+            margin-top: 25px;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Завдання 5: Інтерактивна карта областей України</h2>
+    <p class="instruction">Натисніть на область карти, щоб відкрити статтю про неї у Вікіпедії (відкриється в новій вкладці).</p>
+
+    <!-- Блочний елемент, у який поміщено зображення -->
+    <div class="map-container">
+        <!-- Зображення карти України з атрибутом usemap -->
+       <img src="../img/ukraine-map.png" usemap="#ukrainemap" alt="Адміністративна карта України" width="1000" height="670">
+             
+        <!-- Карта інтерактивних областей -->
+        <map name="ukrainemap">
+            <!-- Захід -->
+            <area shape="rect" coords="20,290,110,400" target="_blank" alt="Закарпатська область" title="Закарпатська область" href="https://uk.wikipedia.org/wiki/Закарпатська_область">
+            <area shape="rect" coords="60,190,165,300" target="_blank" alt="Львівська область" title="Львівська область" href="https://uk.wikipedia.org/wiki/Львівська_область">
+            <area shape="rect" coords="110,100,215,200" target="_blank" alt="Волинська область" title="Волинська область" href="https://uk.wikipedia.org/wiki/Волинська_область">
+            <area shape="rect" coords="200,90,290,200" target="_blank" alt="Рівненська область" title="Рівненська область" href="https://uk.wikipedia.org/wiki/Рівненська_область">
+            <area shape="rect" coords="165,210,240,320" target="_blank" alt="Тернопільська область" title="Тернопільська область" href="https://uk.wikipedia.org/wiki/Тернопільська_область">
+            <area shape="rect" coords="105,290,190,390" target="_blank" alt="Івано-Франківська область" title="Івано-Франківська область" href="https://uk.wikipedia.org/wiki/Івано-Франківська_область">
+            <area shape="rect" coords="185,320,280,395" target="_blank" alt="Чернівецька область" title="Чернівецька область" href="https://uk.wikipedia.org/wiki/Чернівецька_область">
+
+            <!-- Центр і Північ -->
+            <area shape="rect" coords="235,200,325,310" target="_blank" alt="Хмельницька область" title="Хмельницька область" href="https://uk.wikipedia.org/wiki/Хмельницька_область">
+            <area shape="rect" coords="285,115,395,240" target="_blank" alt="Житомирська область" title="Житомирська область" href="https://uk.wikipedia.org/wiki/Житомирська_область">
+            <area shape="rect" coords="305,260,400,380" target="_blank" alt="Вінницька область" title="Вінницька область" href="https://uk.wikipedia.org/wiki/Вінницька_область">
+            <area shape="rect" coords="395,140,510,270" target="_blank" alt="Київська область" title="Київська область" href="https://uk.wikipedia.org/wiki/Київська_область">
+            <area shape="rect" coords="490,90,610,210" target="_blank" alt="Чернігівська область" title="Чернігівська область" href="https://uk.wikipedia.org/wiki/Чернігівська_область">
+            <area shape="rect" coords="465,240,580,335" target="_blank" alt="Черкаська область" title="Черкаська область" href="https://uk.wikipedia.org/wiki/Черкаська_область">
+            <area shape="rect" coords="480,320,610,410" target="_blank" alt="Кіровоградська область" title="Кіровоградська область" href="https://uk.wikipedia.org/wiki/Кіровоградська_область">
+            <area shape="rect" coords="570,200,690,325" target="_blank" alt="Полтавська область" title="Полтавська область" href="https://uk.wikipedia.org/wiki/Полтавська_область">
+            <area shape="rect" coords="600,105,715,225" target="_blank" alt="Сумська область" title="Сумська область" href="https://uk.wikipedia.org/wiki/Сумська_область">
+
+            <!-- Схід -->
+            <area shape="rect" coords="690,215,820,335" target="_blank" alt="Харківська область" title="Харківська область" href="https://uk.wikipedia.org/wiki/Харківська_область">
+            <area shape="rect" coords="605,320,740,430" target="_blank" alt="Дніпропетровська область" title="Дніпропетровська область" href="https://uk.wikipedia.org/wiki/Дніпропетровська_область">
+            <area shape="rect" coords="735,335,840,460" target="_blank" alt="Донецька область" title="Донецька область" href="https://uk.wikipedia.org/wiki/Донецька_область">
+            <area shape="rect" coords="820,240,935,365" target="_blank" alt="Луганська область" title="Луганська область" href="https://uk.wikipedia.org/wiki/Луганська_область">
+
+            <!-- Південь -->
+            <area shape="rect" coords="310,380,445,550" target="_blank" alt="Одеська область" title="Одеська область" href="https://uk.wikipedia.org/wiki/Одеська_область">
+            <area shape="rect" coords="440,390,545,495" target="_blank" alt="Миколаївська область" title="Миколаївська область" href="https://uk.wikipedia.org/wiki/Миколаївська_область">
+            <area shape="rect" coords="535,420,650,540" target="_blank" alt="Херсонська область" title="Херсонська область" href="https://uk.wikipedia.org/wiki/Херсонська_область">
+            <area shape="rect" coords="640,400,745,520" target="_blank" alt="Запорізька область" title="Запорізька область" href="https://uk.wikipedia.org/wiki/Запорізька_область">
+            <area shape="rect" coords="530,520,695,650" target="_blank" alt="Автономна Республіка Крим" title="Автономна Республіка Крим" href="https://uk.wikipedia.org/wiki/Автономна_Республіка_Крим">
+        </map>
+    </div>
+
+    <!-- Посилання повернення на головну -->
+    <div class="back-link">
+        <p><a href="../index.html">Повернутись на головну</a></p>
+    </div>
+
+</body>
+</html>

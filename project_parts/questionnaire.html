@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 4 - Анкета студента</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 750px;
+            margin: 0 auto;
+            text-align: left;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        fieldset {
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            padding: 20px;
+        }
+        legend {
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 0 10px;
+            font-size: 1.15em;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[list],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .radio-check-group {
+            margin: 10px 0;
+        }
+        .radio-check-group label {
+            font-weight: normal;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .btn-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        input[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+        }
+        input[type="reset"] {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .note {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 style="text-align: center;">Анкета реєстрації та опитування студента</h2>
+        <p style="text-align: center; color: #555;">Заповніть усі необхідні поля форми</p>
+
+        <!-- Головна форма: для демонстрації параметрів у URL використовуємо method="get" -->
+        <!-- Також реалізовано підтримку завантаження файлів з enctype="multipart/form-data" -->
+        <form action="" method="get" enctype="multipart/form-data">
+
+            <!-- Блок 1: Основні особисті дані -->
+            <fieldset>
+                <legend>Особисті дані</legend>
+
+                <div class="form-group">
+                    <label for="full_name">ПІБ студента:*</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Введіть ваше повне ім'я" required tabindex="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="user_email">Електронна пошта (Email):*</label>
+                    <input type="email" id="user_email" name="user_email" placeholder="example@domain.com" 
+                           autocomplete="off" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required tabindex="2">
+                    <div class="note">Автозаповнення вимкнено. Формат: user@domain.com</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone_number">Мобільний номер:*</label>
+                    <input type="tel" id="phone_number" name="phone_number" placeholder="+380XXXXXXXXX" 
+                           pattern="^\+380\d{9}$" required tabindex="3">
+                    <div class="note">Формат: +380XXXXXXXXX (рівно 12 символів)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="user_pass">Пароль облікового запису:*</label>
+                    <input type="password" id="user_pass" name="user_pass" placeholder="Введіть пароль (6 символів)" 
+                           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6}" title="Пароль має складатись рівно з 6 символів, містити хоча б одну велику літеру, одну малу літеру та одну цифру" required tabindex="4">
+                    <div class="note">Рівно 6 символів: мінімум 1 велика літера, 1 мала та 1 цифра.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="birth_date">Дата народження:</label>
+                    <input type="date" id="birth_date" name="birth_date" value="2005-01-01" tabindex="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="city_choice">Місто проживання (вибір з підказками datalist):</label>
+                    <input list="cities" id="city_choice" name="city_choice" placeholder="Почніть вводити або оберіть місто" tabindex="6">
+                    <datalist id="cities">
+                        <option value="Чернівці">
+                        <option value="Київ">
+                        <option value="Львів">
+                        <option value="Одеса">
+                        <option value="Харків">
+                    </datalist>
+                </div>
+            </fieldset>
+
+            <!-- Блок 2: Опитування та вибір варіантів -->
+            <fieldset>
+                <legend>Навчання та навички</legend>
+
+                <!-- Блок radio 1: 3 значення -->
+                <div class="form-group radio-check-group">
+                    <label>Курс навчання:*</label><br>
+                    <label><input type="radio" name="study_course" value="1_course" tabindex="7"> 1-й курс</label>
+                    <label><input type="radio" name="study_course" value="2_course" tabindex="8"> 2-й курс</label>
+                    <label><input type="radio" name="study_course" value="3_course" tabindex="9"> 3-й курс</label>
+                </div>
+
+                <!-- Блок radio 2: 3 значення, одне checked за замовчуванням -->
+                <div class="form-group radio-check-group">
+                    <label>Форма навчання:*</label><br>
+                    <label><input type="radio" name="study_form" value="budget" checked tabindex="10"> Денна (бюджет)</label>
+                    <label><input type="radio" name="study_form" value="contract" tabindex="11"> Денна (контракт)</label>
+                    <label><input type="radio" name="study_form" value="extramural" tabindex="12"> Заочна</label>
+                </div>
+
+                <!-- Блок checkbox: 4 значення -->
+                <div class="form-group radio-check-group">
+                    <label>Мови програмування / технології, якими ви володієте:</label><br>
+                    <label><input type="checkbox" name="skills" value="html_css" checked tabindex="13"> HTML / CSS</label>
+                    <label><input type="checkbox" name="skills" value="cpp" tabindex="14"> C++</label>
+                    <label><input type="checkbox" name="skills" value="js" tabindex="15"> JavaScript</label>
+                    <label><input type="checkbox" name="skills" value="sql" tabindex="16"> SQL / Бази даних</label>
+                </div>
+
+                <!-- Випадаючий список 1: 5 значень, 3-є selected за замовчуванням -->
+                <div class="form-group">
+                    <label for="fav_subject">Улюблений предмет (3-є значення вибране):</label>
+                    <select id="fav_subject" name="fav_subject" tabindex="17">
+                        <option value="math">Вища математика</option>
+                        <option value="algorithms">Алгоритми та структури даних</option>
+                        <option value="web" selected>Веб-технології</option>
+                        <option value="arch">Архітектура комп'ютерів</option>
+                        <option value="networks">Комп'ютерні мережі</option>
+                    </select>
+                </div>
+
+                <!-- Випадаючий список 2: 6 значень з можливістю множинного вибору (multiple) -->
+                <div class="form-group">
+                    <label for="preferred_roles">Бажані напрямки розвитку в ІТ (множинний вибір - затисніть Ctrl):</label>
+                    <select id="preferred_roles" name="preferred_roles" multiple size="4" tabindex="18">
+                        <option value="frontend">Frontend Розробник</option>
+                        <option value="backend">Backend Розробник</option>
+                        <option value="fullstack">Fullstack Розробник</option>
+                        <option value="qa">QA Інженер (Тестувальник)</option>
+                        <option value="ui_ux">UI/UX Дизайнер</option>
+                        <option value="devops">DevOps Інженер</option>
+                    </select>
+                </div>
+
+                <!-- Випадаючий список 3: 4 групи пунктів по 3 значення (optgroup) -->
+                <div class="form-group">
+                    <label for="tech_stack">Вибір стеку технологій (згруповано за optgroup):</label>
+                    <select id="tech_stack" name="tech_stack" tabindex="19">
+                        <optgroup label="Web Frontend">
+                            <option value="react">React</option>
+                            <option value="vue">Vue.js</option>
+                            <option value="angular">Angular</option>
+                        </optgroup>
+                        <optgroup label="Web Backend">
+                            <option value="nodejs">Node.js</option>
+                            <option value="django">Python Django</option>
+                            <option value="laravel">PHP Laravel</option>
+                        </optgroup>
+                        <optgroup label="Системне програмування">
+                            <option value="cpp_clang">C++ (Clang/GCC)</option>
+                            <option value="rust">Rust</option>
+                            <option value="go">Golang</option>
+                        </optgroup>
+                        <optgroup label="Бази даних">
+                            <option value="postgresql">PostgreSQL</option>
+                            <option value="mysql">MySQL</option>
+                            <option value="mongodb">MongoDB</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- Блок 3: Додаткові файли та коментар -->
+            <fieldset>
+                <legend>Матеріали та коментарі</legend>
+
+                <!-- Завантаження тільки аудіо і більше одного (accept + multiple) -->
+                <div class="form-group">
+                    <label for="audio_upload">Завантажити аудіо-файли (тільки аудіо, можна декілька):</label>
+                    <input type="file" id="audio_upload" name="audio_files" accept="audio/*" multiple tabindex="20">
+                    <div class="note">Підтримуються формати: .mp3, .wav, .ogg тощо</div>
+                </div>
+
+                <!-- Текстова область textarea -->
+                <div class="form-group">
+                    <label for="user_comments">Додаткові коментарі / Про себе:</label>
+                    <textarea id="user_comments" name="user_comments" rows="4" placeholder="Розкажіть трохи про ваші очікування від курсу..." tabindex="21"></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Кнопки відправки та скидання -->
+            <div class="btn-box">
+                <input type="submit" value="Відправити анкету (GET)" tabindex="22">
+                <input type="reset" value="Очистити форму" tabindex="23">
+            </div>
+
+        </form>
+
+        <br>
+        <!-- Обов'язкове посилання на головну сторінку -->
+        <div class="back-link">
+            <a href="../index.html">Повернутись на головну</a>
+        </div>
+    </div>
+
+</body>
+</html>

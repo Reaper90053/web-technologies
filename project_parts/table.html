@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 1 - Таблиця</title>
+    <!-- Стилі за підказкою викладача -->
+    <style type="text/css">
+        table { border-collapse: collapse; width: 400px; margin: 0 auto; }
+        td { border: 2px solid #000; } /* За завданням рамка 2px */
+        tr { width: 60px; height: 60px; }
+        body { text-align: center; } /* Розташування контенту по центру */
+    </style>
+</head>
+<body>
+
+    <h2>Завдання 1: Таблиця</h2>
+
+    <!-- Таблиця 8 рядків на 6 колонок -->
+    <table>
+        <!-- Рядок 1: верхня суцільна смуга -->
+        <tr>
+            <td colspan="6" bgcolor="#00ffcc"><br/></td>
+        </tr>
+
+        <!-- Рядок 2 -->
+        <tr>
+            <td rowspan="6" bgcolor="#ffffe0"><br/></td> <!-- Ліва зовнішня бежева колонка -->
+            <td colspan="4" bgcolor="#00ffcc"><br/></td> <!-- Верхня середня смуга -->
+            <td rowspan="6" bgcolor="#ffffe0"><br/></td> <!-- Права зовнішня бежева колонка -->
+        </tr>
+
+        <!-- Рядок 3 -->
+        <tr>
+            <td rowspan="4" bgcolor="#ffffe0"><br/></td> <!-- Ліва внутрішня бежева колонка -->
+            <td colspan="2" bgcolor="#00ffcc"><br/></td> <!-- Верхня внутрішня смужка -->
+            <td rowspan="4" bgcolor="#ffffe0"><br/></td> <!-- Права внутрішня бежева колонка -->
+        </tr>
+
+        <!-- Рядок 4: Верхні центральні квадрати -->
+        <tr>
+            <td bgcolor="#ff0000"><br/></td> <!-- Червоний -->
+            <td bgcolor="#0000ff"><br/></td> <!-- Синій -->
+        </tr>
+
+        <!-- Рядок 5: Нижні центральні квадрати -->
+        <tr>
+            <td bgcolor="#00ff00"><br/></td> <!-- Зелений -->
+            <td bgcolor="#ffff00"><br/></td> <!-- Жовтий -->
+        </tr>
+
+        <!-- Рядок 6 -->
+        <tr>
+            <td colspan="2" bgcolor="#00ffcc"><br/></td> <!-- Нижня внутрішня смужка -->
+        </tr>
+
+        <!-- Рядок 7 -->
+        <tr>
+            <td colspan="4" bgcolor="#00ffcc"><br/></td> <!-- Нижня середня смуга -->
+        </tr>
+
+        <!-- Рядок 8: нижня суцільна смуга -->
+        <tr>
+            <td colspan="6" bgcolor="#00ffcc"><br/></td>
+        </tr>
+    </table>
+
+    <br/>
+    <!-- Вимога: посилання на повернення на головну -->
+    <p>
+        <a href="../index.html">Повернутись на головну</a>
+    </p>
+
+</body>
+</html>
