@@ -10,6 +10,12 @@
     table { border-collapse: collapse; width: 400px; margin: 0 auto; }
     td { border: 5px solid #000; }
     tr { width: 60px; height: 60px; }
+ 
+    /* прибираємо зовнішні краї таблиці */
+    .t { border-top: none; }
+    .b { border-bottom: none; }
+    .l { border-left: none; }
+    .r { border-right: none; }
   </style>
 </head>
 <body>
@@ -17,42 +23,42 @@
     <table>
       <!-- Рядок 1 -->
       <tr>
-        <td colspan="2" bgcolor="#ffffff"><br/></td>
-        <td colspan="2" bgcolor="#ffffff"><br/></td>
-        <td colspan="2" bgcolor="#fffa69"><br/></td>
+        <td class="t l" colspan="2" bgcolor="#ffffff"><br/></td>
+        <td class="t" colspan="2" bgcolor="#ffffff"><br/></td>
+        <td class="t r" colspan="2" bgcolor="#fffa69"><br/></td>
       </tr>
       <!-- Рядок 2 -->
       <tr>
-        <td bgcolor="#ffffff"><br/></td>
+        <td class="l" bgcolor="#ffffff"><br/></td>
         <td colspan="3" rowspan="2" bgcolor="#ff5b2d"><br/></td>
-        <td colspan="2" bgcolor="#fffa69"><br/></td>
+        <td class="r" colspan="2" bgcolor="#fffa69"><br/></td>
       </tr>
       <!-- Рядок 3 -->
       <tr>
-        <td rowspan="2" bgcolor="#ffffff"><br/></td>
+        <td class="l" rowspan="2" bgcolor="#ffffff"><br/></td>
         <td bgcolor="#ffffff"><br/></td>
-        <td bgcolor="#ffffff"><br/></td>
+        <td class="r" bgcolor="#ffffff"><br/></td>
       </tr>
       <!-- Рядок 4 -->
       <tr>
         <td colspan="2" rowspan="2" bgcolor="#000000"><br/></td>
         <td bgcolor="#ffffff"><br/></td>
-        <td colspan="2" bgcolor="#ffffff"><br/></td>
+        <td class="r" colspan="2" bgcolor="#ffffff"><br/></td>
       </tr>
       <!-- Рядок 5 -->
       <tr>
-        <td rowspan="3" bgcolor="#fffa69"><br/></td>
+        <td class="l b" rowspan="3" bgcolor="#fffa69"><br/></td>
         <td bgcolor="#ffffff"><br/></td>
-        <td colspan="2" rowspan="2" bgcolor="#074481"><br/></td>
+        <td class="r" colspan="2" rowspan="2" bgcolor="#074481"><br/></td>
       </tr>
       <!-- Рядок 6 -->
       <tr>
-        <td colspan="2" rowspan="2" bgcolor="#ffffff"><br/></td>
+        <td class="b" colspan="2" rowspan="2" bgcolor="#ffffff"><br/></td>
         <td bgcolor="#000000"><br/></td>
       </tr>
       <!-- Рядок 7 -->
       <tr>
-        <td colspan="3" bgcolor="#ffffff"><br/></td>
+        <td class="b r" colspan="3" bgcolor="#ffffff"><br/></td>
       </tr>
     </table>
  
